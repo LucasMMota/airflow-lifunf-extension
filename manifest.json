@@ -1,0 +1,24 @@
+{
+  "name": "Airflow Lifunf",
+  "version": "1.0",
+  "description": "This intents to help poor engineers to use Airflow!",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "logoaf.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/admin/airflow/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "content.js"
+      ],
+      "css": [
+        "estilera.css"
+      ]
+    }
+  ]
+}
