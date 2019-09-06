@@ -24,5 +24,5 @@ function createAutoRefreshInterval() {
   return setInterval(()=>{
   if (isAutoRefreshEnabled())
       location.reload()
-  }, 1500);
+  }, 3000);
 }
