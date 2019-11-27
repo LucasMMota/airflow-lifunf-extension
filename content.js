@@ -38,7 +38,8 @@ let apply_links_on_logs_page = ()=>{
         let getTextInterval = (() => setInterval(
             () => {
               if (log_text != ''){
-                $('body > .container .tab-pane.active pre code').html(urlify(log_text))
+                formmated_log_txt = paint_errors(urlify(log_text))
+                $('body > .container .tab-pane.active pre code').html(formmated_log_txt)
                 clearInterval(getTextInterval)
               }
               log_text = $('body > .container .tab-pane.active pre code').html()
@@ -46,7 +47,12 @@ let apply_links_on_logs_page = ()=>{
     }
 }
 
-let urlify = (text)=> {
-    let urlRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(urlRegex, (url) => '<a href="' + url + '" target="blank">' + url + '</a>')
+let urlify = (text)=> text.replace(/(https?:\/\/[^\s]+)/g, (url) => '<a href="' + url + '" target="blank">' + url + '</a>')
+
+let paint_errors = (text) => {
+    miolo = text.replace(/\[.*\]\s.*ERROR.*(\r|\n)/g, (str_line) => '<span class="af-lilfunf-error-highlight">' + str_line + '</span>')
+    new_text = '<span>'
+    new_text += miolo
+    new_text += '</span>'
+    return new_text
 }
