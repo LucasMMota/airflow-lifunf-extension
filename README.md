@@ -11,8 +11,7 @@ Now you can drink your cup of coffe ~beer~ while Airflow run the Dag you're tryi
 - Error highlighting to help easily find them on the logs.
 ![image](https://user-images.githubusercontent.com/13151948/74528295-b26b5c80-4f06-11ea-9402-e60483a802bb.png)
 
-- Creates a link on the GCP logs to the Databricks cluster
-![image](https://user-images.githubusercontent.com/13151948/74528516-f3fc0780-4f06-11ea-89fb-cf6a196d208c.png)
+- Creates links on the logs
  
 
 
